@@ -1,0 +1,50 @@
+body{
+     background-color: rgb(188, 217, 228);
+}
+
+#currentDate{
+    color: white;
+}
+
+.jumbotron{
+    background-color: rgb(53, 53, 49);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    width: 800px;
+    border: solid 1px gray;
+    border-radius: 2%;
+}
+
+.col-2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: white;
+}
+
+button{
+    height: 40px;
+}
+
+.timeRows {
+    border: solid 4px lightgrey;
+}
+
+.past {
+    background-color: rgb(227, 243, 246);
+}
+
+.present {
+    background-color: rgb(243, 112, 50);
+}
+
+.future {
+    background-color: rgb(247, 184, 90);
+}
+
+.saveBtn {
+    background-color: rgb(53, 53, 49);
+    color: white;
+}
