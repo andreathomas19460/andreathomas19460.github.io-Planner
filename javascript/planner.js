@@ -6,7 +6,7 @@ createTimeRow();
 createInputBlock();
 createSaveBlock();
 blockColor();
-local();
+
 
 
 function currentDate(){
@@ -43,7 +43,7 @@ function createInputBlock(time, text) {
 function createSaveBlock(time){
     var saveBtn = $('<button><i class="fas fa-save">SAVE</i></button>');
     saveBtn.attr("data-time", time);
-    saveBtn.addClass("saveBtn w-90 h-90");
+    saveBtn.addClass("saveBtn");
 
     return $("<div>").addClass("col-md-2").append(saveBtn);
 }
@@ -57,11 +57,12 @@ $(".saveBtn").click(function() {
     console.log(planData)
 })
 
+local();
+
 function local() {
     planData = localStorage.getItem("planData") != null
         ? JSON.parse(localStorage.getItem("planData")) : new Array(12);
 }
-
 
 function blockColor(element, timeSelected) {
     if (timeSelected < time) {

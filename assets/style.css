@@ -1,5 +1,5 @@
 body{
-     background-color: rgb(188, 217, 228);
+     background-color: rgb(247,184, 90);
 }
 
 #currentDate{
@@ -28,6 +28,10 @@ button{
     height: 40px;
 }
 
+.time{
+    font-size: 30px;
+}
+
 .timeRows {
     border: solid 4px lightgrey;
 }
@@ -41,7 +45,7 @@ button{
 }
 
 .future {
-    background-color: rgb(247, 184, 90);
+    background-color: rgb(188, 217, 228);
 }
 
 .saveBtn {
