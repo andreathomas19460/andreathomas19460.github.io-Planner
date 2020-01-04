@@ -16,15 +16,15 @@ function currentDate(){
 function createTimeRow(){
     for(var i = 0; i < 12; i++){
         var time = i + 8;
-        var timeBlock = $("<div>").addClass("row timeRows");
-        timeBlock.attr("id", `time-${time}`);
-        $(".container").append(timeBlock);
+        var timeRow = $("<div>").addClass("row timeRows");
+        timeRow.attr("id", `time-${time}`);
+        $(".container").append(timeRow);
         var timeCol = $("<div>").addClass("time col-md-2").text(moment(time,'H').format('hh a'));
         var inputCol = createInputBlock(time, planData[i]);
         var saveCol = createSaveBlock(time);
-        timeBlock.append(timeCol);
-        timeBlock.append(inputCol);
-        timeBlock.append(saveCol);
+        timeRow.append(timeCol);
+        timeRow.append(inputCol);
+        timeRow.append(saveCol);
     }
 }
 
@@ -36,7 +36,7 @@ function createInputBlock(time, text) {
     if (text != null) {
         textArea.val(text);
     }
-    return $("<div>").addClass("col-md-8").append(textArea);
+    return $("<div>").append(textArea);
 }
 
 
