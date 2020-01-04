@@ -28,7 +28,7 @@ Webpage can be found at this link: https://andreathomas19460.github.io/andreatho
 
 ## Note 
 
-This project is not fully functional. The jQuery code is not committing input (text and time) to local storage when save button is clicked.
+ The jQuery code is committing input (text and time) to local storage when save button is clicked, but it is not displaying it when page is reloaded. 
 
 ## Technologies Used
 

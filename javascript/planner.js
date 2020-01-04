@@ -41,7 +41,7 @@ function createInputBlock(time, text) {
 
 
 function createSaveBlock(time){
-    var saveBtn = $('<button><i class="fas fa-save">SAVE</i></button>');
+    var saveBtn = $('<button>SAVE</button>');
     saveBtn.attr("data-time", time);
     saveBtn.addClass("saveBtn");
 
@@ -57,11 +57,15 @@ $(".saveBtn").click(function() {
     console.log(planData)
 })
 
+
 local();
 
 function local() {
+    
     planData = localStorage.getItem("planData") != null
         ? JSON.parse(localStorage.getItem("planData")) : new Array(12);
+        
+        console.log(planData)
 }
 
 function blockColor(element, timeSelected) {
