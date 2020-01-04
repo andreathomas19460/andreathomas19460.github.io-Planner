@@ -2,7 +2,7 @@ var currentDateElement = $("#currentDate");
 var time = moment().hour();
 var planData = [];
 currentDate();
-createTimeBlock();
+createTimeRow();
 createInputBlock();
 createSaveBlock();
 blockColor();
@@ -13,7 +13,7 @@ function currentDate(){
     currentDateElement.text(moment().format('MMM Do YYYY'));
 }
 
-function createTimeBlock(){
+function createTimeRow(){
     for(var i = 0; i < 12; i++){
         var time = i + 8;
         var timeBlock = $("<div>").addClass("row timeRows");
@@ -41,9 +41,9 @@ function createInputBlock(time, text) {
 
 
 function createSaveBlock(time){
-    var saveBtn = $('<button><i class="fas fa-save"></i></button>');
+    var saveBtn = $('<button><i class="fas fa-save">SAVE</i></button>');
     saveBtn.attr("data-time", time);
-    saveBtn.addClass("saveBtn col-md-2");
+    saveBtn.addClass("saveBtn w-90 h-90");
 
     return $("<div>").addClass("col-md-2").append(saveBtn);
 }
@@ -54,8 +54,14 @@ $(".saveBtn").click(function() {
     var index = parseInt(time) - 12;
     planData[index] = text;
     localStorage.setItem("planData", JSON.stringify(planData));
-    console.log("saved")
+    console.log(planData)
 })
+
+function local() {
+    planData = localStorage.getItem("planData") != null
+        ? JSON.parse(localStorage.getItem("planData")) : new Array(12);
+}
+
 
 function blockColor(element, timeSelected) {
     if (timeSelected < time) {
@@ -67,15 +73,4 @@ function blockColor(element, timeSelected) {
     }
 }
 
-function local() {
-    planData = localStorage.getItem("planData") != null
-        ? JSON.parse(localStorage.getItem("planData")) : new Array(12);
-}
 
-function clearPlanData() {
-    function clear() {
-        planData.length = 0;
-    }
-    clear();
-    localStorage.setItem("planData", JSON.stringify(planData));
- }
